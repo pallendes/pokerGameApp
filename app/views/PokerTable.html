@@ -1,0 +1,86 @@
+<div class="poker-table">
+    
+    <div class="center">
+        <h1>Pocker Game App</h1>
+    </div>
+    
+    <div class="center">
+        <h2>Oponent's Hand {{vm.opponentHand[0].visible ? '' : '(hidden)'}}</h2>
+    </div>
+    
+    <div class="center" 
+         ng-show="vm.isDealingOpponentHand">
+        Dealing cards...
+    </div>
+    
+    <div class="player"
+         ng-show="!vm.isDealingOpponentHand">
+        
+        <div ng-show="vm.opponentHandError">
+            <p class="center">The dealer didn't hear you, 
+                <button ng-click="vm.retryDealing('opponent')">request cards</button> again...
+            </p>
+        </div>
+        
+        <div ng-hide="vm.opponentHandError">
+        
+            <div class="hand">
+                <div class="card" 
+                     ng-repeat="card in vm.opponentHand track by $index" 
+                     ng-class="{'selected' : card.selected}">
+                    <span class="number">{{ card.visible ? card.number : '?' }}</span>
+                    <span class="suit">{{  card.visible ? card.suit : '' }}</span>
+                </div>
+            </div>
+
+            <div class="options">
+                Options: 
+                <button ng-click="vm.toggleOpponentCardsVisibility()">Toggle Oponent's Cards visibility</button>
+            </div>
+    
+        </div>
+        
+    </div>
+    
+    <div class="center">
+        <h2>Your Hand</h2>
+    </div>
+    
+    <div class="center" 
+         ng-show="vm.isDealingCurrentHand">
+        Dealing cards...
+    </div>
+    
+    <div class="player"
+         ng-show="!vm.isDealingCurrentHand">
+
+        <div ng-show="vm.currentHandError">
+            <p class="center">The dealer didn't hear you, 
+                <button ng-click="vm.retryDealing('current')">request cards</button> again...
+            </p>
+        </div>
+        
+        <div ng-hide="vm.currentHandError">
+        
+            <div class="hand">
+                <div class="card" 
+                     ng-repeat="card in vm.currentHand track by $index"
+                     ng-click="vm.toggleSelectCard(card)"
+                     ng-class="{'selected' : card.selected}">
+                    <span class="number">{{ card.number }}</span>
+                    <span class="suit">{{ card.suit }}</span>
+                </div>
+            </div>
+
+            <div class="options">
+                Options: 
+                <button ng-click="vm.replaceSelectedCards('current')">Replace Selected Cards</button>&nbsp;
+                <button ng-click="vm.restartGame()">Restart Game</button> &nbsp;
+                <button ng-click="vm.checkForAWinner()">Check for the Winner</button> 
+            </div>
+        
+        </div>
+        
+    </div>
+        
+</div>
