@@ -1,3 +1,14 @@
+IMPORTANT NOTE: I had to write code that doesn't make me feel proud :(, but unfortunately, I don't have enough time because I have to work on another project too. 
+
+These are the pending tasks: 
+- CROSS DOMAIN REQUEST: The responses of the services do not include any CORS header, so it was impossible to access the content of the response of the requests. For reasons of time, I didn't make mayor efforts to find a way to solve this (JSONP was not an alternative), so please to anyone who reads this, comment me what are the possible workarounds if they exists :). I used a browser extension to disable the same origin security policy.
+ - The tests are implemented only for the service CardRankingService (which determines the winning hand).
+ - It was a terrible idea to create CardRankingService as an angular factory, I should have created a class mixing prototypes and factories.
+ - When both hands have the same ranking, as I understand, only the cards that are part of the ranking (I far as I know again) should be considered to determine the winning hand. As it is now programmed, it considers them all.
+ - Etc, etc.
+
+=======================================================================================================================================
+
 IMPORTANTE: El proyecto no es 100% funcional, tuve que escribir bloques de código de los que no me siento orgulloso, pero es todo lo que puedo hacer en el tiempo que tengo y, desafortunadamente, no puedo dedicarle más debido a que tengo otro proyecto en el que trabajar. 
 
 - Tareas que quedaron pendientes:
