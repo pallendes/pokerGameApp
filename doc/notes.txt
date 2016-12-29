@@ -1,0 +1,9 @@
+IMPORTANTE: El proyecto no es 100% funcional, tuve que escribir bloques de código de los que no me siento orgulloso, pero es todo lo que puedo hacer en el tiempo que tengo y, desafortunadamente, no puedo dedicarle más debido a que tengo otro proyecto en el que trabajar. 
+
+- Tareas que quedaron pendientes:
+    - CROSS DOMAIN REQUEST: Las respuestas de los servicios no incluyen ninguna cabecera CORS, por lo que me fue imposible acceder al contenido de la respuesta de las peticiones. Por motivos de tiempo, no dediqué mayores esfuerzos a buscar la manera de solventar esto (JSONP no es una alternativa), así que por favor quien lea esto me comenta cuáles son los posibles "workarounds" si los hay :).
+    - Los test están implementados solo para el service CardRankingService (que se encarga de determinar la mano ganadora).
+    - Fue una pésima idea que CardRankingService fuera un factory angular, debí haber creado una clase mezclando prototipos y factories.
+    - cuando ambas manos tienen el mismo ranking, segun entiendo, para determinar la mano ganadora sólo se deben considerar las cartas que son parte del ranking (creo). Como está programado ahora, las considera todas.
+    - Etc, etc.
+        

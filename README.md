@@ -1,7 +1,6 @@
-# poker-game-app3
+# poker-game-app
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+Simple poker game app made with angular exclusively for the technical test. Additional notes can be found in the /doc directory.
 
 ## Build & development
 
